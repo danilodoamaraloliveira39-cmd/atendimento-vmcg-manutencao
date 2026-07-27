@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VMCG MANUTENÇÃO PREDIAL - Especialistas em obras de alvenaria, elétrica, hidráulica, pintura e manutenção residencial completa.">
+    <title>VMCG - Manutenção Predial e Residencial</title>
+    <style>
+        :root {
+            --primary: #2c3e50; /* Azul Petróleo */
+            --secondary: #e67e22; /* Laranja Construção */
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+            --white: #ffffff;
+            --gray: #7f8c8d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span { color: var(--secondary); }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--secondary); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            transition: 0.3s;
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* About & Legal */
+        .about { padding: 100px 0; }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .legal-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .legal-box h3 { color: var(--primary); margin-bottom: 20px; }
+
+        .legal-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .legal-item label {
+            display: block;
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #ecf0f1;
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-h4 { color: var(--white); margin-bottom: 25px; }
+
+        .footer-links { list-style: none; }
+
+        .footer-links li { margin-bottom: 12px; }
+
+        .footer-links a { color: #bdc3c7; text-decoration: none; font-size: 14px; }
+
+        .footer-links a:hover { color: var(--secondary); }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+
+        .close { float: right; font-size: 28px; cursor: pointer; }
+
+        /* WhatsApp */
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 1500;
+        }
+
+        @media (max-width: 768px) {
+            .about-content { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <a href="#" class="logo">VMCG <span>MANUTENÇÃO</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#empresa">A Empresa</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Soluções Completas em Manutenção Predial</h1>
+            <p>Especialistas em obras de alvenaria, elétrica, hidráulica e acabamentos com o mais alto padrão de qualidade.</p>
+            <a href="https://wa.me/5511999999999" class="btn btn-primary">Solicitar Orçamento Grátis</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossas Especialidades</h2>
+                <p>Equipe qualificada para obras residenciais, comerciais e industriais.</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <i>🏗️</i>
+                    <h3>Obras de Alvenaria</h3>
+                    <p>Construção e reformas estruturais com foco em segurança e durabilidade. (CNAE 43.99-1-03)</p>
+                </div>
+                <div class="card">
+                    <i>⚡</i>
+                    <h3>Elétrica e Ar Condicionado</h3>
+                    <p>Instalações elétricas completas e manutenção de sistemas de climatização. (CNAE 43.21-5-00)</p>
+                </div>
+                <div class="card">
+                    <i>💧</i>
+                    <h3>Hidráulica e Gás</h3>
+                    <p>Manutenção preventiva e corretiva de sistemas hidráulicos e de gás. (CNAE 43.22-3-01)</p>
+                </div>
+                <div class="card">
+                    <i>🎨</i>
+                    <h3>Pintura e Revestimento</h3>
+                    <p>Acabamentos de alto padrão, gesso, pintura e aplicação de resinas. (CNAE 43.30-4-04)</p>
+                </div>
+                <div class="card">
+                    <i>❄️</i>
+                    <h3>Refrigeração Central</h3>
+                    <p>Sistemas centrais de ar condicionado, ventilação e refrigeração. (CNAE 43.22-3-02)</p>
+                </div>
+                <div class="card">
+                    <i>🏛️</i>
+                    <h3>Prédios Históricos</h3>
+                    <p>Restauração e conservação especializada de lugares e prédios históricos. (CNAE 91.02-3-02)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="empresa">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Compromisso com a Excelência</h2>
+                    <p>A VMCG MANUTENÇÃO PREDIAL E RESIDENCIAL LTDA é referência no mercado de construção civil, entregando projetos que unem técnica apurada e cumprimento rigoroso de prazos.</p>
+                    <p>Nossa atuação abrange desde pequenas reformas residenciais até grandes manutenções prediais e restaurações históricas, sempre respeitando as normas técnicas vigentes.</p>
+                </div>
+                <div class="legal-box">
+                    <h3>Dados Corporativos</h3>
+                    <div class="legal-item">
+                        <label>Razão Social</label>
+                        <strong>VMCG MANUTENÇÃO PREDIAL E RESIDENCIAL LTDA</strong>
+                    </div>
+                    <div class="legal-item">
+                        <label>CNPJ</label>
+                        <strong>41.034.772/0001-21</strong>
+                    </div>
+                    <div class="legal-item">
+                        <label>Atividade Principal</label>
+                        <strong>43.99-1-03 - Obras de alvenaria</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-h4">VMCG Manutenção</h4>
+                    <p>Sua obra em boas mãos. Qualidade, segurança e transparência em cada serviço prestado.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-h4">Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="javascript:void(0)" onclick="openModal('privacy')">Política de Privacidade</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('terms')">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-h4">Atendimento</h4>
+                    <p style="font-size: 14px;">Segunda a Sexta: 08h às 18h</p>
+                    <p style="font-size: 14px; margin-top: 10px;">Email: contato@vmcg.com.br</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VMCG MANUTENÇÃO PREDIAL E RESIDENCIAL LTDA. Todos os direitos reservados.</p>
+                <p style="margin-top: 10px; opacity: 0.5;">Este site é independente e não possui vínculo oficial com Google Ads ou Facebook Ads.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="whatsapp">💬</a>
+
+    <!-- Modals -->
+    <div id="privacy" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('privacy')">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <p style="margin-top: 20px;">A VMCG MANUTENÇÃO valoriza sua privacidade. Coletamos dados apenas para fins de orçamento e suporte técnico via WhatsApp. Seus dados são protegidos e nunca compartilhados sem autorização.</p>
+        </div>
+    </div>
+
+    <div id="terms" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('terms')">&times;</span>
+            <h2>Termos de Uso</h2>
+            <p style="margin-top: 20px;">Ao utilizar este site, você concorda que o conteúdo é informativo. Orçamentos de manutenção e obras dependem de vistoria técnica prévia no local.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') { event.target.style.display = "none"; }
+        }
+    </script>
+</body>
+</html>
